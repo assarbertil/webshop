@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { MovieService } from "./services/movie.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
 })
 export class AppComponent {
-  title = 'webshop';
+  constructor(movies: MovieService) {
+    movies.getMovies();
+  }
 }

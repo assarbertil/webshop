@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+
+@layer base {
+  body {
+    @apply bg-sky-1 text-mauve-12;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
