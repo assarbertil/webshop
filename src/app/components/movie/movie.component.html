@@ -1,9 +1,28 @@
-<div class="1/4">
+<button (click)="addToCart(movie)" class="1/4 group">
   <div class="w-52">
-    <div class="bg-sky-3 p-2 rounded-xl shadow-xl">
+    <div class="bg-sky-3 p-2 rounded-xl shadow-xl relative">
       <!-- <img [src]="this.src" /> -->
-      <img class="w-48 rounded-md" [src]="movie.imageUrl" />
+      <img
+        class="w-48 rounded-md group-hover:opacity-20 transition"
+        [src]="movie.imageUrl"
+      />
+      <svg
+        class="absolute group-hover:opacity-100 opacity-0 scale-150 text-mauve-12 transition top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="16" />
+        <line x1="8" y1="12" x2="16" y2="12" />
+      </svg>
     </div>
     <h2 class="text-center mt-2">{{ movie.name }}</h2>
   </div>
-</div>
+</button>

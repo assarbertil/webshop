@@ -1,9 +1,9 @@
-interface IMovieCategory {
+interface MovieCategory {
   categoryId: number;
   category: any;
 }
 
-export interface IMovie {
+export interface Movie {
   id: number;
   name: string;
   description: string;
@@ -11,5 +11,5 @@ export interface IMovie {
   imageUrl: string;
   year: string;
   added: Date;
-  productCategory: IMovieCategory[];
+  productCategory: MovieCategory[];
 }
