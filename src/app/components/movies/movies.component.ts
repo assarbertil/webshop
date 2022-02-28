@@ -1,19 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { Movie } from "src/app/interfaces/Movie";
-import { MovieFetcherService } from "src/app/services/movie-fetcher/movie-fetcher.service";
+import { SortedMovieCategory } from "src/app/interfaces/SortedMovies";
+import { MoviesByCategoryService } from "src/app/services/movies-by-category/movies-by-category.service";
 
 @Component({
   selector: "app-movies",
   templateUrl: "./movies.component.html",
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[] = [];
+  categories: SortedMovieCategory[] = [];
 
-  constructor(public movieFetcherService: MovieFetcherService) {}
+  constructor(private moviesByCategoryService: MoviesByCategoryService) {}
 
   ngOnInit(): void {
-    this.movieFetcherService
-      .getMovies()
-      .subscribe((movies) => (this.movies = movies));
+    this.moviesByCategoryService
+      .getSortedMovies()
+      .subscribe((categories) => (this.categories = categories));
   }
 }
