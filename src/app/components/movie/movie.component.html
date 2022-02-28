@@ -1,4 +1,4 @@
-<button (click)="addToCart(movie)" class="1/4 group">
+<button (click)="showModal()" class="1/4 group">
   <div class="w-52">
     <div class="relative p-2 shadow-xl bg-sky-3 rounded-xl">
       <img
@@ -7,7 +7,7 @@
         [alt]="movie.name"
       />
       <svg
-        class="absolute transition scale-150 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-mauve-12 top-1/2 left-1/2"
+        class="absolute transition scale-150 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 text-sky-12 top-1/2 left-1/2"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -26,3 +26,35 @@
     <h2 class="mt-2 text-center">{{ movie.name }}</h2>
   </div>
 </button>
+
+<!-- Modal -->
+<div
+  (click)="hideModal()"
+  *ngIf="modalOpen"
+  class="fixed inset-0 z-10 grid w-screen h-screen place-items-center bg-sky-1/80 backdrop-blur-sm"
+>
+  <div
+    appClickStopPropagation
+    class="flex w-1/2 p-8 shadow-xl bg-sky-2 rounded-xl"
+  >
+    <div class="flex-shrink-0 w-52">
+      <div class="relative p-2 shadow-xl bg-sky-3 rounded-xl">
+        <img
+          class="w-48 transition rounded-md"
+          [src]="movie.imageUrl"
+          [alt]="movie.name"
+        />
+      </div>
+    </div>
+    <div class="px-8">
+      <h3 class="mb-8 text-2xl font-medium scroll-mt-16">{{ movie.name }}</h3>
+      <p class="text-sky-11">{{ movie.description }}</p>
+      <button
+        (click)="addToCart(movie)"
+        class="px-4 py-2 mt-8 font-medium rounded-md bg-sky-4 hover:bg-sky-3 text-sky-11"
+      >
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

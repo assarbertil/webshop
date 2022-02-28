@@ -10,6 +10,9 @@ import { LayoutComponent } from "./components/layout/layout.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { MovieComponent } from "./components/movie/movie.component";
 import { CheckoutComponent } from "./components/checkout/checkout.component";
+import { HomeComponent } from "./routes/home/home.component";
+import { AdminComponent } from "./routes/admin/admin.component";
+import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { CheckoutComponent } from "./components/checkout/checkout.component";
     HeaderComponent,
     MovieComponent,
     CheckoutComponent,
+    HomeComponent,
+    AdminComponent,
+    ClickStopPropagationDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
