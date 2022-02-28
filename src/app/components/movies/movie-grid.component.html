@@ -1,19 +1,25 @@
 <div class="flex flex-wrap justify-between gap-y-16">
+  <!-- Container for category links -->
   <div
     class="flex justify-center p-2 mx-auto shadow-xl rounded-xl w-max gap-x-2 bg-sky-2"
   >
+    <!-- Category links -->
     <a
-      class="px-6 py-3 font-medium rounded-md hover:bg-sky-3 text-sky-11"
       *ngFor="let category of categories"
       [href]="'#' + category.name"
+      class="px-6 py-3 font-medium rounded-md hover:bg-sky-3 text-sky-11"
       >{{ category.name }}</a
     >
   </div>
 
+  <!-- Categories -->
   <div *ngFor="let category of categories">
-    <h1 class="mb-8 text-2xl font-medium" [id]="category.name">
+    <!-- Category title -->
+    <h1 [id]="category.name" class="mb-8 text-2xl font-medium scroll-mt-16">
       {{ category.name }}
     </h1>
+
+    <!-- Category grid -->
     <div class="grid grid-cols-4 gap-16">
       <app-movie
         *ngFor="let movie of category.movies"
