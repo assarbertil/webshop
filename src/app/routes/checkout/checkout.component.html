@@ -1,3 +1,34 @@
-<app-layout>
-  <p>checkout works</p>
-</app-layout>
+<div
+  class="grid w-full h-screen grid-cols-2 mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg"
+>
+  <div class="h-full p-8">
+    <div class="h-full p-8 bg-sky-2 rounded-3xl">
+      <a routerLink="/">🠐 Go back</a>
+      <h1 class="my-8 text-2xl font-medium">Checkout items</h1>
+
+      <table class="w-full border-collapse table-auto">
+        <thead>
+          <tr class="text-left border-b border-b-sky-3">
+            <th class="px-8 py-4 font-normal">Name</th>
+            <th class="px-8 py-4 font-normal">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td class="px-8 py-4">{{ item.name }}</td>
+            <td class="px-8 py-4">{{ item.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="h-full p-8">
+    <div class="h-full p-8 bg-sky-3 rounded-3xl">
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+    </div>
+  </div>
+</div>

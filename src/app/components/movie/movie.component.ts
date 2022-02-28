@@ -19,6 +19,7 @@ export class MovieComponent {
   movie!: Movie;
 
   modalOpen = false;
+  buttonText = "Add to cart";
 
   constructor(private cartService: CartService) {}
 
@@ -32,6 +33,6 @@ export class MovieComponent {
 
   addToCart(product: Movie) {
     this.cartService.addToCart(product);
-    window.alert("Your product has been added to the cart!");
+    this.buttonText = "Added to cart";
   }
 }

@@ -5,14 +5,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
 import { HttpClientModule } from "@angular/common/http";
-import { MovieGridComponent } from "./components/movies/movie-grid.component";
+import { MovieGridComponent } from "./components/movie-grid/movie-grid.component";
 import { LayoutComponent } from "./components/layout/layout.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { MovieComponent } from "./components/movie/movie.component";
-import { CheckoutComponent } from "./components/checkout/checkout.component";
+import { CheckoutComponent } from "./routes/checkout/checkout.component";
 import { HomeComponent } from "./routes/home/home.component";
 import { AdminComponent } from "./routes/admin/admin.component";
-import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
+import { ClickStopPropagationDirective } from "./directives/click-stop-propagation.directive";
 
 @NgModule({
   declarations: [

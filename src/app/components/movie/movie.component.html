@@ -35,8 +35,9 @@
 >
   <div
     appClickStopPropagation
-    class="flex w-1/2 p-8 shadow-xl bg-sky-2 rounded-xl"
+    class="relative flex w-1/2 p-8 shadow-xl bg-sky-2 rounded-xl"
   >
+    <!-- Dialog image -->
     <div class="flex-shrink-0 w-52">
       <div class="relative p-2 shadow-xl bg-sky-3 rounded-xl">
         <img
@@ -46,6 +47,7 @@
         />
       </div>
     </div>
+    <!-- Dialog text content -->
     <div class="px-8">
       <h3 class="mb-8 text-2xl font-medium scroll-mt-16">{{ movie.name }}</h3>
       <p class="text-sky-11">{{ movie.description }}</p>
@@ -53,8 +55,29 @@
         (click)="addToCart(movie)"
         class="px-4 py-2 mt-8 font-medium rounded-md bg-sky-4 hover:bg-sky-3 text-sky-11"
       >
-        Add to cart
+        {{ buttonText }}
       </button>
     </div>
+    <!-- Close button -->
+    <button
+      (click)="hideModal()"
+      class="absolute p-2 rounded-full text-sky-11 hover:bg-sky-3 top-4 right-4"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-x"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
   </div>
 </div>
