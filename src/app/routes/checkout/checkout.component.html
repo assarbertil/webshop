@@ -1,34 +1,77 @@
 <div
-  class="grid w-full h-screen grid-cols-2 mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg"
+  class="grid w-full h-screen grid-cols-1 mx-auto shadow-xl lg:grid-cols-2 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
 >
-  <div class="h-full p-8">
-    <div class="h-full p-8 bg-sky-2 rounded-3xl">
-      <a routerLink="/">🠐 Go back</a>
-      <h1 class="my-8 text-2xl font-medium">Checkout items</h1>
+  <div class="h-full py-8">
+    <div
+      class="relative h-full p-8 bg-sky-2 rounded-3xl lg:rounded-l-3xl lg:rounded-r-none"
+    >
+      <a
+        routerLink="/"
+        class="absolute inline-block p-4 top-6 left-6 text-sky-11"
+        >🠐 Go back</a
+      >
+      <h1 class="mt-32 mb-16 text-2xl font-medium">
+        Total {{ calcTotalPrice() }} kr
+      </h1>
 
-      <table class="w-full border-collapse table-auto">
+      <table class="w-full text-sm table-auto">
         <thead>
-          <tr class="text-left border-b border-b-sky-3">
-            <th class="px-8 py-4 font-normal">Name</th>
-            <th class="px-8 py-4 font-normal">Price</th>
+          <tr class="text-left border-b border-b-sky-3 text-sky-11">
+            <th class="py-4 font-normal">Name</th>
+            <th class="w-1/6 p-4 font-normal text-center">Amount</th>
+            <th class="w-1/6 py-4 font-normal text-center min-w-min">Price</th>
+            <th class="w-8"></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items">
-            <td class="px-8 py-4">{{ item.name }}</td>
-            <td class="px-8 py-4">{{ item.price }}</td>
+          <tr *ngFor="let item of cartItems" class="border-b border-b-sky-3">
+            <td class="py-4">{{ item.name }}</td>
+            <td class="w-1/6 p-4 text-center">{{ item.amount }}</td>
+            <td class="w-1/6 py-4 text-center min-w-max">
+              {{ item.price }}&nbsp;kr
+            </td>
+            <td class="w-8 p-2">
+              <button
+                (click)="removeFromCart(item.id)"
+                class="p-2 rounded-full text-red-11 hover:bg-red-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="3 6 5 6 21 6" />
+                  <path
+                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                  />
+                  <line x1="10" y1="11" x2="10" y2="17" />
+                  <line x1="14" y1="11" x2="14" y2="17" />
+                </svg>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
+
+      <button
+        (click)="clearCart()"
+        class="px-4 py-2 mt-16 text-sm font-medium rounded-md bg-red-4 text-red-11 hover:bg-red-5"
+      >
+        Clear cart
+      </button>
     </div>
   </div>
-  <div class="h-full p-8">
-    <div class="h-full p-8 bg-sky-3 rounded-3xl">
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
-      <h1></h1>
+  <div class="h-full py-8">
+    <div
+      class="h-full p-8 bg-sky-3 rounded-3xl lg:rounded-r-3xl lg:rounded-l-none"
+    >
+      <h2 class="mt-32 mb-4 text-2xl font-medium">Payment method</h2>
     </div>
   </div>
 </div>

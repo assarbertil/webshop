@@ -32,7 +32,7 @@ export class MoviesByCategoryService {
     return forkJoin([categoriesData, moviesData]);
   }
 
-  // Pure function that sorts movies by category
+  // Sorts movies by category
   private sortMoviesByCategory(categories: MovieCategory[], movies: Movie[]) {
     // Map all recieved categories to a new array
     return categories.map((category) => ({

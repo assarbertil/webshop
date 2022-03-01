@@ -8,18 +8,16 @@ import { CartService } from "src/app/services/cart/cart.service";
   templateUrl: "./movie.component.html",
 })
 export class MovieComponent {
+  modalOpen = false;
+
   // Press escape to close modal
   @HostListener("document:keydown", ["$event"])
   keyEvent(event: KeyboardEvent) {
     event.key === "Escape" && this.hideModal();
   }
 
-  // Where movie object is passed in from parent component
-  @Input()
+  @Input() // Where movie object is passed in from parent component
   movie!: Movie;
-
-  modalOpen = false;
-  buttonText = "Add to cart";
 
   constructor(private cartService: CartService) {}
 
@@ -31,8 +29,8 @@ export class MovieComponent {
     this.modalOpen = false;
   }
 
-  addToCart(product: Movie) {
-    this.cartService.addToCart(product);
-    this.buttonText = "Added to cart";
+  addToCart(movie: Movie) {
+    this.cartService.addItem(movie);
+    this.hideModal();
   }
 }

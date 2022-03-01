@@ -49,13 +49,14 @@
     </div>
     <!-- Dialog text content -->
     <div class="px-8">
-      <h3 class="mb-8 text-2xl font-medium scroll-mt-16">{{ movie.name }}</h3>
+      <h3 class="text-2xl font-medium scroll-mt-16">{{ movie.name }}</h3>
+      <h4 class="my-4">{{ movie.price }} kr</h4>
       <p class="text-sky-11">{{ movie.description }}</p>
       <button
         (click)="addToCart(movie)"
-        class="px-4 py-2 mt-8 font-medium rounded-md bg-sky-4 hover:bg-sky-3 text-sky-11"
+        class="px-4 py-2 mt-8 font-medium rounded-md bg-sky-4 hover:bg-sky-5 text-sky-11"
       >
-        {{ buttonText }}
+        Add to cart
       </button>
     </div>
     <!-- Close button -->
