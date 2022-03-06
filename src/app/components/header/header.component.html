@@ -1,14 +1,15 @@
 <header class="flex items-center justify-between py-8">
   <h1 class="text-2xl font-medium select-none">Movie store</h1>
-  <form class="w-1/2">
-    <input
-      type="text"
-      name="search"
-      id="search"
-      placeholder="Search movies"
-      class="w-full px-6 py-3 rounded-lg shadow-xl bg-sky-3 placeholder:text-sky-11 placeholder:font-medium"
-    />
-  </form>
+
+  <input
+    type="text"
+    name="search"
+    id="search"
+    placeholder="Search movies"
+    [formControl]="searchValue"
+    class="w-1/2 px-6 py-3 border-0 rounded-lg shadow-xl bg-sky-3 placeholder:text-sky-11 placeholder:font-medium"
+  />
+
   <a routerLink="/checkout" class="inline-block p-4">
     <svg
       aria-label="Link to checkout"

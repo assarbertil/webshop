@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { SortedMovieCategory } from "src/app/interfaces/SortedMovies";
+import { SortedMovieCategory } from "src/app/interfaces/SortedMovieCategory";
 import { MoviesByCategoryService } from "src/app/services/movies-by-category/movies-by-category.service";
 
 @Component({
-  selector: "app-movies",
+  selector: "app-movie-grid",
   templateUrl: "./movie-grid.component.html",
 })
 export class MovieGridComponent implements OnInit {

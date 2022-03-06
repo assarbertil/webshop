@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-sky-1 text-mauve-12;
+    @apply bg-sky-1 text-mauve-12 selection:bg-sky-11 selection:text-sky-5;
   }
 }
 

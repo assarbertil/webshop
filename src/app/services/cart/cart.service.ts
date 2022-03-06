@@ -7,10 +7,9 @@ import { LocalStorageService } from "../local-storage/local-storage.service";
   providedIn: "root",
 })
 export class CartService {
-  // Local state
   cartProducts: Movie[] = [];
 
-  // Uses our local storage service to read and write data
+  // Uses local storage service to read and write data
   constructor(private localStorage: LocalStorageService) {}
 
   // Add item to cart

@@ -1,0 +1,59 @@
+<form
+  [formGroup]="checkoutForm"
+  (submit)="onSubmit()"
+  class="flex flex-col px-8 pt-12 pb-8 mx-auto mt-16 shadow-lg rounded-xl gap-y-8 max-w-max bg-sky-6"
+>
+  <div>
+    <label for="email" class="block mb-2 text-lg font-medium">Email</label>
+    <input
+      type="email"
+      id="email"
+      placeholder="Email"
+      formControlName="email"
+      class="border-0 rounded placeholder:text-sky-9/50 placeholder:text-sm bg-sky-4"
+    />
+  </div>
+
+  <div>
+    <h2 class="mb-2 text-lg font-medium">Payment method</h2>
+
+    <div class="flex gap-x-4">
+      <div class="flex items-center gap-x-2">
+        <input
+          type="radio"
+          id="paypal"
+          formControlName="paymentMethod"
+          value="PayPal"
+          class="hidden peer"
+        />
+        <label
+          for="paypal"
+          class="px-4 py-2 text-sm border rounded-md cursor-pointer text-sky-12 border-sky-8 peer-checked:bg-sky-8"
+          >PayPal</label
+        >
+      </div>
+      <div class="flex items-center gap-x-2">
+        <input
+          type="radio"
+          id="card"
+          formControlName="paymentMethod"
+          value="Card"
+          class="hidden peer"
+        />
+        <label
+          for="card"
+          class="px-4 py-2 text-sm border rounded-md cursor-pointer text-sky-12 border-sky-8 peer-checked:bg-sky-8"
+          >Card</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="checkoutForm.invalid"
+    class="px-4 py-2 text-sm font-medium rounded-md bg-sky-9 text-sky-1 hover:bg-sky-10 disabled:bg-mauve-9 disabled:text-mauve-11 disabled:cursor-not-allowed"
+  >
+    Place order
+  </button>
+</form>

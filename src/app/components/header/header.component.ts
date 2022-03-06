@@ -1,17 +1,20 @@
 import { Component, OnInit } from "@angular/core";
-import { Movie } from "src/app/interfaces/Movie";
-import { CartService } from "src/app/services/cart/cart.service";
+import { FormControl } from "@angular/forms";
+import { SearchService } from "../../services/search/search.service";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
 })
 export class HeaderComponent implements OnInit {
-  items: Movie[] = [];
+  searchValue = new FormControl("");
 
-  constructor(private cartService: CartService) {}
+  constructor(private search: SearchService) {}
 
   ngOnInit(): void {
-    this.items = this.cartService.cartProducts;
+    // Every time search value changes, update service with new value
+    this.searchValue.valueChanges.subscribe((value) =>
+      this.search.setSearchValue(value)
+    );
   }
 }
