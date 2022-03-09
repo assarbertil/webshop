@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
-import { MovieFetcherService } from "src/app/services/movie-fetcher/movie-fetcher.service";
-import { CategoryFetcherService } from "src/app/services/category-fetcher/category-fetcher.service";
+import { MovieFetcherService } from "src/app/services/movie-fetcher.service";
+import { CategoryFetcherService } from "src/app/services/category-fetcher.service";
 
 import { MovieCategory } from "src/app/interfaces/MovieCategory";
 import { Movie } from "src/app/interfaces/Movie";

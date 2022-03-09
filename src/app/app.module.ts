@@ -15,7 +15,7 @@ import { HomeComponent } from "./routes/home/home.component";
 import { AdminComponent } from "./routes/admin/admin.component";
 import { ClickStopPropagationDirective } from "./directives/click-stop-propagation.directive";
 import { CheckoutFormComponent } from "./components/checkout-form/checkout-form.component";
-import { SuccessComponent } from './routes/success/success.component';
+import { SuccessComponent } from "./routes/success/success.component";
 
 @NgModule({
   declarations: [

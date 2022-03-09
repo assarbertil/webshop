@@ -9,7 +9,7 @@ export interface Movie {
   description: string;
   price: number;
   imageUrl: string;
-  year: string;
+  year: number;
   added: Date;
   productCategory: MovieCategory[];
 }

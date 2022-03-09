@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { CartItem } from "src/app/interfaces/CartItem";
-import { CartService } from "src/app/services/cart/cart.service";
+import { CartService } from "src/app/services/cart.service";
 
 @Component({
   selector: "app-checkout",
@@ -13,7 +13,6 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.cartService.generateCheckoutItems();
-    console.log("Cart items:", this.cartService.generateCheckoutItems());
   }
 
   removeFromCart(id: number) {

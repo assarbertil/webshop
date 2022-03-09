@@ -27,19 +27,20 @@
   </div>
 </button>
 
-<!-- Modal -->
+<!-- Dialog -->
 <div
+  role="Dialog"
   (click)="hideModal()"
   *ngIf="modalOpen"
-  class="fixed inset-0 z-10 grid w-screen h-screen place-items-center bg-sky-1/80 backdrop-blur-sm"
+  class="fixed inset-0 z-10 grid w-screen h-screen p-8 overflow-y-scroll place-items-center bg-sky-1/80 backdrop-blur-sm"
 >
   <div
     appClickStopPropagation
-    class="relative flex w-1/2 p-8 shadow-xl bg-sky-2 rounded-xl"
+    class="relative flex flex-col w-full p-8 shadow-xl md:flex-row md:w-1/2 bg-sky-2 rounded-xl"
   >
     <!-- Dialog image -->
     <div class="flex-shrink-0 w-52">
-      <div class="relative p-2 shadow-xl bg-sky-3 rounded-xl">
+      <div class="relative p-2 mb-8 shadow-xl bg-sky-3 rounded-xl">
         <img
           class="w-48 transition rounded-md"
           [src]="movie.imageUrl"
@@ -48,7 +49,7 @@
       </div>
     </div>
     <!-- Dialog text content -->
-    <div class="px-8">
+    <div class="px-0 md:px-8">
       <h3 class="text-2xl font-medium scroll-mt-16">{{ movie.name }}</h3>
       <h4 class="my-4">{{ movie.price }} kr</h4>
       <p class="text-sky-11">{{ movie.description }}</p>

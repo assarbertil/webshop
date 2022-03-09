@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { CartService } from "src/app/services/cart/cart.service";
-import { OrdersService } from "src/app/services/orders/orders.service";
+import { CartService } from "src/app/services/cart.service";
+import { OrdersService } from "src/app/services/orders.service";
 
 @Component({
   selector: "app-checkout-form",

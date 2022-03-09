@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CartItem } from "src/app/interfaces/CartItem";
 import { Movie } from "src/app/interfaces/Movie";
-import { LocalStorageService } from "../local-storage/local-storage.service";
+import { LocalStorageService } from "./local-storage.service";
 
 @Injectable({
   providedIn: "root",
